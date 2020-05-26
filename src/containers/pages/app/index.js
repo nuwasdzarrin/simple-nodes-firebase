@@ -1,40 +1,41 @@
 import React from 'react';
-import logo from '../../../assets/img/logos/logo.svg';
-import './App.css';
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-//   Link
-// } from "react-router-dom";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route} from "react-router-dom";
+import {Provider} from "react-redux";
+
+import {Store} from "../../../config/redux";
+
 import Dashboard from "../dashboard";
 import Login from "../login";
 import Register from "../register";
 
+import './App.css';
+
 function Index() {
   return (
-      <Router>
-        <div>
-          {/*<nav>*/}
-          {/*  <ul>*/}
-          {/*    <li>*/}
-          {/*      <Link to="/">Home</Link>*/}
-          {/*    </li>*/}
-          {/*    <li>*/}
-          {/*      <Link to="/login">Login</Link>*/}
-          {/*    </li>*/}
-          {/*    <li>*/}
-          {/*      <Link to="/register">Register</Link>*/}
-          {/*    </li>*/}
-          {/*  </ul>*/}
-          {/*</nav>*/}
+      <Provider store={Store}>
+          <Router>
+              <div>
+                  {/*<nav>*/}
+                  {/*  <ul>*/}
+                  {/*    <li>*/}
+                  {/*      <Link to="/">Home</Link>*/}
+                  {/*    </li>*/}
+                  {/*    <li>*/}
+                  {/*      <Link to="/login">Login</Link>*/}
+                  {/*    </li>*/}
+                  {/*    <li>*/}
+                  {/*      <Link to="/register">Register</Link>*/}
+                  {/*    </li>*/}
+                  {/*  </ul>*/}
+                  {/*</nav>*/}
 
-          <Route path="/" exact component={Dashboard} />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register}/>
-        </div>
-      </Router>
+                  <Route path="/" exact component={Dashboard} />
+                  <Route path="/login" component={Login} />
+                  <Route path="/register" component={Register}/>
+              </div>
+          </Router>
+      </Provider>
+
     // <div className="App">
     //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
